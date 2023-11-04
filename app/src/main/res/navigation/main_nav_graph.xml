@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav_graph"
+    app:startDestination="@id/catalogFragment">
+
+    <fragment
+        android:id="@+id/catalogFragment"
+        android:name="com.example.testtask.feature.catalog.CatalogFragment"
+        android:label="CatalogFragment"
+        tools:layout="@layout/fragment_catalog">
+        <action
+            android:id="@+id/action_catalogFragment_to_catalogItemDetailFragment"
+            app:destination="@id/catalogItemDetailFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/catalogItemDetailFragment"
+        android:name="com.example.testtask.feature.catalog.detail.CatalogItemDetailFragment"
+        android:label="CatalogItemDetailFragment"
+        tools:layout="@layout/fragment_catalog_item_detail">
+        <action
+            android:id="@+id/action_back"
+            app:destination="@id/catalogFragment" />
+        <argument
+            android:name="itemTitle"
+            app:argType="string" />
+        <argument
+            android:name="itemImage"
+            app:argType="string" />
+    </fragment>
+</navigation>
